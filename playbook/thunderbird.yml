@@ -1,0 +1,29 @@
+---
+- name: Установка почтового клиента Mozilla Thunderbird
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Подключение стандартных репозиториев
+      ansible.builtin.apt_repository:
+        repo: deb http://ftp.ru.debian.org/debian/ bullseye main contrib non-free
+        state: present
+
+    - name: Подключение репозиториев с обновлениями ОС
+      ansible.builtin.apt_repository:
+        repo: deb http://ftp.ru.debian.org/debian/ bullseye-updates main contrib non-free
+
+    - name: Подключение репозиториев с обновлениями безопасности
+      ansible.builtin.apt_repository:
+        repo: deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+        state: present
+
+    - name: Обновление списка пакетов
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Установка пакетов Mozilla Thunderbird
+      ansible.builtin.apt:
+        pkg:
+          - thunderbird
+          - thunderbird-l10n-ru
