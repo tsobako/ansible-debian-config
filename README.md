@@ -32,22 +32,27 @@
 
 ## Playbook
 
-### emacs
+### Docker
+
+Установка Docker и необходимых для него пакетов из репозиториев разработчика, а не из репозиториев Debian.
+
+### EMACS
 
 Установка GNU EMACS и пакета его дополнений.
 
 ### Mattermost
 
-Установка клиента рабочего стола для мессенджера Mattermost.
+Установка клиента рабочего стола для мессенджера [Mattermost][4].
 
-### nodejs
+### NodeJS
 
 Установка [NodeJS][3] LTS. В настоящее время это 18.x.
 
-### thunderbird
+### Thunderbird
 
 Установка почтового клиента Mozilla Thunderbird.
 
 [1]: https://ansible.com/
 [2]: https://debian.org/
 [3]: https://nodejs.org/
+[4]: https://mattermost.com/
