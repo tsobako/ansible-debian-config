@@ -1,0 +1,15 @@
+---
+- name: Установка Ruby on Rails
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Установка пакетов, необходимых для сборки нативных расширений
+      ansible.builtin.apt:
+        pkg:
+          ruby
+          ruby-dev
+          libffi-dev
+          libedit-dev
+          libyaml-dev

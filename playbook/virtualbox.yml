@@ -1,0 +1,27 @@
+---
+#####################################
+# ПЛЕЙБУК НЕ ГОТОВ К ИСПОЛЬЗОВАНИЮ! #
+#####################################
+
+- name: Установка Oracle VirtualBox
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Установка ключа GPG
+      ansible.builtin.apt_key:
+        url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+        dest: /etc/apt/trusted.gpg.d/virtualbox-2016.gpg
+        state: present
+
+    - name: Подключение репозитория
+      ansible.builtin.apt_repository:
+        repo: deb https://download.virtualbox.org/virtualbox/debian bullseye contrib
+        state: present
+        filename: /etc/apt/sources.list.d/nodesource.list
+        update_cache: true  # apt update
+
+    - name: Установка пакетов VirtualBox
+      ansible.builtin.apt:
+        name: virtualbox-7.0
+        state: present
