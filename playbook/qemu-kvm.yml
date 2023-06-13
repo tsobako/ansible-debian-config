@@ -1,0 +1,16 @@
+---
+# На основе статьи Debian Wiki: https://wiki.debian.org/ru/KVM
+- name: Установка QEMU-KVM
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Установка пакетов
+      ansible.builtin.apt:
+        update_cache: yes
+        pkg:
+        - qemu-kvm
+        - libvirt-clients
+        - libvirt-daemon-system
+        - virt-manager

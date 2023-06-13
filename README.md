@@ -48,6 +48,14 @@
 
 Установка [NodeJS][3] LTS. В настоящее время это 18.x.
 
+### QEMU-KVM
+
+Установка системы виртуализации QEMU-KVM. Плейбук основан на статье из Debian Wiki.
+
+### Ruby
+
+Установка [Ruby][5] и пакетов, необходимых для нативной сборки расширений.
+
 ### Thunderbird
 
 Установка почтового клиента Mozilla Thunderbird.
@@ -56,3 +64,4 @@
 [2]: https://debian.org/
 [3]: https://nodejs.org/
 [4]: https://mattermost.com/
+[5]: https://ruby-lang.org/

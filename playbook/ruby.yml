@@ -4,12 +4,13 @@
   become: true
 
   tasks:
-
     - name: Установка пакетов, необходимых для сборки нативных расширений
       ansible.builtin.apt:
+        update_cache: yes
         pkg:
-          ruby
-          ruby-dev
-          libffi-dev
-          libedit-dev
-          libyaml-dev
+        - libedit-dev
+        - libffi-dev
+        - libssl-dev
+        - libyaml-dev
+        - ruby
+        - ruby-dev
