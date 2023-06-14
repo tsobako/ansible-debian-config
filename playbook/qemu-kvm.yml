@@ -14,3 +14,7 @@
         - libvirt-clients
         - libvirt-daemon-system
         - virt-manager
+
+    - name: Включить автозапуск сети `default`
+      ansible.builtin.command: virsh net-autostart --network default
+      become: yes
