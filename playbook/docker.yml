@@ -26,7 +26,7 @@
 
     - name: Удаление пакета runc, если он был установлен ранее
       ansible.builtin.apt:
-        name: containerd
+        name: runc
         state: absent
 
     - name: Установка ключа GPG
