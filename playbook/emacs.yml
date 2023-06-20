@@ -34,8 +34,9 @@
         name: emacs-nox
         state: absent
 
-    - name: Установка пакетов GNU EMACS
+    - name: Установка GNU EMACS и Git
       ansible.builtin.apt:
         pkg:
           - emacs
           - emacs-goodies-el
+          - git
