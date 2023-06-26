@@ -15,6 +15,9 @@
           - libvirt-daemon-system
           - virt-manager
 
+    - name: Проверка статуса сети 'default'
+
+
     - name: Включить автозапуск сети `default`
       ansible.builtin.command: virsh net-autostart --network default
       become: true
