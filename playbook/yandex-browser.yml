@@ -1,0 +1,23 @@
+---
+- name: Установка Yandex Browser
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Установка ключа GPG
+      ansible.builtin.apt_key:
+        url: https://repo.yandex.ru/yandex-browser/YANDEX-BROWSER-KEY.GPG
+        dest: /etc/apt/trusted.gpg.d/virtualbox-2016.gpg
+        state: present
+
+    - name: Подключение репозитория
+      ansible.builtin.apt_repository:
+        repo: deb https://repo.yandex.ru/yandex-browser/deb stable main
+        state: present
+        filename: /etc/apt/sources.list.d/yandex-browser.list
+        update_cache: true  # apt update
+
+    - name: Установка пакетов Yandex Browser
+      ansible.builtin.apt:
+        name: yandex-browser
+        state: present
