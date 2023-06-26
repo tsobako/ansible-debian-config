@@ -6,7 +6,7 @@
   tasks:
     - name: Установка пакетов, необходимых для сборки нативных расширений
       ansible.builtin.apt:
-        update_cache: yes
+        update_cache: true
         pkg:
         - libedit-dev
         - libffi-dev

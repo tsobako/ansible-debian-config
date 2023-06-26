@@ -6,15 +6,15 @@
 
   tasks:
 
-    - name: Установка пакетов
+    - name: Установка пакетов QEMU-KVM
       ansible.builtin.apt:
-        update_cache: yes
+        update_cache: true
         pkg:
-        - qemu-kvm
-        - libvirt-clients
-        - libvirt-daemon-system
-        - virt-manager
+          - qemu-kvm
+          - libvirt-clients
+          - libvirt-daemon-system
+          - virt-manager
 
     - name: Включить автозапуск сети `default`
       ansible.builtin.command: virsh net-autostart --network default
-      become: yes
+      become: true

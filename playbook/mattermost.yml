@@ -7,7 +7,7 @@
     - name: Установка ключа GPG
       ansible.builtin.apt_key:
         url: https://deb.packages.mattermost.com/pubkey.gpg
-        dest: /etc/apt/trusted.gpg.d/mattermost.gpg
+        keyring: /etc/apt/trusted.gpg.d/mattermost.gpg
         state: present
 
     - name: Подключение репозитория

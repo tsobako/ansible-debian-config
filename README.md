@@ -60,8 +60,18 @@
 
 Установка почтового клиента Mozilla Thunderbird.
 
+### VirtualBox
+
+Установка [Oracle VirtualBox][6]. **В настоящее время дистрибутива для Debian Bookworm не существует**.
+
+### Yandex Browser
+
+Установка стабильной версии [Yandex Browser][7].
+
 [1]: https://ansible.com/
 [2]: https://debian.org/
 [3]: https://nodejs.org/
 [4]: https://mattermost.com/
 [5]: https://ruby-lang.org/
+[6]: https://virtualbox.org/
+[7]: https://browser.yandex.ru/

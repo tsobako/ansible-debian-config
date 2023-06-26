@@ -7,7 +7,7 @@
     - name: Установка ключа GPG
       ansible.builtin.apt_key:
         url: https://repo.yandex.ru/yandex-browser/YANDEX-BROWSER-KEY.GPG
-        dest: /etc/apt/trusted.gpg.d/virtualbox-2016.gpg
+        keyring: /etc/apt/trusted.gpg.d/virtualbox-2016.gpg
         state: present
 
     - name: Подключение репозитория
