@@ -56,22 +56,27 @@
 
 Установка [Ruby][5] и пакетов, необходимых для нативной сборки расширений.
 
+### Terraform
+
+Установка [HashiCorp Terraform][6]. Может не работать из-за введенных против России санкционных ограничений.
+
 ### Thunderbird
 
 Установка почтового клиента Mozilla Thunderbird.
 
 ### VirtualBox
 
-Установка [Oracle VirtualBox][6]. **В настоящее время дистрибутива для Debian Bookworm не существует**.
+Установка [Oracle VirtualBox][7]. **В настоящее время дистрибутива для Debian Bookworm не существует**.
 
 ### Yandex Browser
 
-Установка стабильной версии [Yandex Browser][7].
+Установка стабильной версии [Yandex Browser][8].
 
 [1]: https://ansible.com/
 [2]: https://debian.org/
 [3]: https://nodejs.org/
 [4]: https://mattermost.com/
 [5]: https://ruby-lang.org/
-[6]: https://virtualbox.org/
-[7]: https://browser.yandex.ru/
+[6]: https://developer.hashicorp.com/terraform
+[7]: https://virtualbox.org/
+[8]: https://browser.yandex.ru/
