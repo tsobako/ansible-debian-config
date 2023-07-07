@@ -14,7 +14,7 @@
       ansible.builtin.apt_repository:
         repo: deb https://repo.yandex.ru/yandex-browser/deb stable main
         state: present
-        filename: /etc/apt/sources.list.d/yandex-browser.list
+        filename: yandex-browser # /etc/apt/sources.list.d/yandex-browser.list
         update_cache: true  # apt update
 
     - name: Установка пакетов Yandex Browser

@@ -18,7 +18,7 @@
       ansible.builtin.apt_repository:
         repo: deb https://download.virtualbox.org/virtualbox/debian bullseye contrib
         state: present
-        filename: /etc/apt/sources.list.d/nodesource.list
+        filename: virtualbox# /etc/apt/sources.list.d/virtualbox.list
         update_cache: true  # apt update
 
     - name: Установка пакетов VirtualBox

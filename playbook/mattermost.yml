@@ -14,7 +14,7 @@
       ansible.builtin.apt_repository:
         repo: deb https://deb.packages.mattermost.com stable main
         state: present
-        filename: /etc/apt/sources.list.d/mattermost.list
+        filename: mattermost # /etc/apt/sources.list.d/mattermost.list
         update_cache: true  # apt update
 
     - name: Установка пакета Mattermost Desktop

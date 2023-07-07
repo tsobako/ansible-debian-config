@@ -14,7 +14,7 @@
       ansible.builtin.apt_repository:
         repo: deb https://deb.nodesource.com/node_18.x bullseye main
         state: present
-        filename: /etc/apt/sources.list.d/nodesource.list
+        filename: nodejs # /etc/apt/sources.list.d/nodesource.list
         update_cache: true  # apt update
 
     - name: Установка пакета NodeJS
