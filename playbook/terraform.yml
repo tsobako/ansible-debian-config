@@ -2,6 +2,7 @@
 - name: Установка HashiCorp Terraform
   hosts: all
   become: true
+  gather_facts: true
 
   tasks:
     - name: Установка ключа GPG

@@ -2,6 +2,7 @@
 - name: Установка клиента Mattermost
   hosts: all
   become: true
+  gather_facts: true
 
   tasks:
     - name: Установка ключа GPG

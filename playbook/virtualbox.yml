@@ -6,6 +6,7 @@
 - name: Установка Oracle VirtualBox
   hosts: all
   become: true
+  gather_facts: true
 
   tasks:
     - name: Установка ключа GPG

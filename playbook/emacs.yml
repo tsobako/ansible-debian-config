@@ -2,6 +2,7 @@
 - name: Установка GNU EMACS и его расширений
   hosts: all
   become: true
+  gather_facts: true
 
   tasks:
     - name: Подключение стандартных репозиториев

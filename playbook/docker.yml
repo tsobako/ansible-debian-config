@@ -2,6 +2,7 @@
 - name: Установка Docker
   hosts: all
   become: true
+  gather_facts: true
 
   tasks:
     - name: Удаление пакета docker, если он был установлен ранее

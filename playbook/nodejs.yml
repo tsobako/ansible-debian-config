@@ -2,6 +2,7 @@
 - name: Установка NodeJS
   hosts: all
   become: true
+  gather_facts: true
 
   tasks:
     - name: Установка ключа GPG
