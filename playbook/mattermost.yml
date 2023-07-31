@@ -1,24 +1,24 @@
 ---
-- name: Установка клиента Mattermost
+- name: Install Mattermost desktop client
   hosts: all
   become: true
   gather_facts: true
 
   tasks:
-    - name: Установка ключа GPG
+    - name: Install GPG key
       ansible.builtin.apt_key:
         url: https://deb.packages.mattermost.com/pubkey.gpg
         keyring: /etc/apt/trusted.gpg.d/mattermost.gpg
         state: present
 
-    - name: Подключение репозитория
+    - name: Register Mattermost APT repository
       ansible.builtin.apt_repository:
         repo: deb https://deb.packages.mattermost.com stable main
         state: present
         filename: mattermost # /etc/apt/sources.list.d/mattermost.list
         update_cache: true  # apt update
 
-    - name: Установка пакета Mattermost Desktop
+    - name: Install Mattermost Desktop package
       ansible.builtin.apt:
         name: mattermost-desktop
         state: present

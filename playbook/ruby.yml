@@ -1,16 +1,20 @@
 ---
-- name: Установка Ruby on Rails
+- name: Install Ruby on Rails
   hosts: all
   become: true
 
   tasks:
-    - name: Установка пакетов, необходимых для сборки нативных расширений
+    - name: Install core Ruby packages
       ansible.builtin.apt:
         update_cache: true
+        pkg:
+        - ruby
+    - name: Install development files for building native Ruby extensions
+      ansible.builtin.apt:
+        update_cache: false
         pkg:
         - libedit-dev
         - libffi-dev
         - libssl-dev
         - libyaml-dev
-        - ruby
         - ruby-dev

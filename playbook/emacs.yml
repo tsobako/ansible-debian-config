@@ -1,42 +1,19 @@
 ---
-- name: Установка GNU EMACS и его расширений
+- name: Install GNU Eemacs with extensions
   hosts: all
   become: true
   gather_facts: true
 
   tasks:
-    - name: Подключение стандартных репозиториев
-      ansible.builtin.apt_repository:
-        repo: deb http://ftp.ru.debian.org/debian/ bullseye main contrib non-free
-        state: present
-        filename: /etc/apt/sources.list
-        update_cache: false
-
-    - name: Подключение репозиториев с обновлениями ОС
-      ansible.builtin.apt_repository:
-        repo: deb http://ftp.ru.debian.org/debian/ bullseye-updates main contrib non-free
-        state: present
-        filename: /etc/apt/sources.list
-        update_cache: false
-
-    - name: Подключение репозиториев с обновлениями безопасности
-      ansible.builtin.apt_repository:
-        repo: deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-        state: present
-        filename: /etc/apt/sources.list
-        update_cache: false
-
-    - name: Обновление списка пакетов
-      ansible.builtin.apt:
-        update_cache: true
-
-    - name: Удаление EMACS Nox, если он установлен
+    - name: Search and uninstall Emacs Nox
       ansible.builtin.apt:
         name: emacs-nox
         state: absent
+        purge: true
 
-    - name: Установка GNU EMACS и Git
+    - name: Install GNU Emacs and Git packages
       ansible.builtin.apt:
+        update_cache: true
         pkg:
           - emacs
           - emacs-goodies-el
