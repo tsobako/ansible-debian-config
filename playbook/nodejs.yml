@@ -13,7 +13,7 @@
 
     - name: Register Node.JS APT repository
       ansible.builtin.apt_repository:
-        repo: deb https://deb.nodesource.com/node_18.x bullseye main
+        repo: deb https://deb.nodesource.com/node_18.x nodistro main
         state: present
         filename: nodejs # /etc/apt/sources.list.d/nodesource.list
         update_cache: true  # apt update
