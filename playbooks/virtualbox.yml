@@ -22,6 +22,13 @@
         filename: virtualbox# /etc/apt/sources.list.d/virtualbox.list
         update_cache: true  # apt update
 
+    - name: Install required packages
+      ansible.builtin.apt:
+        pkg:
+          - dkms
+          - build-essential
+          - linux-headers-"{{ ansible_kernel }}"
+
     - name: Install VirtualBox 7 packages
       ansible.builtin.apt:
         name: virtualbox-7.0

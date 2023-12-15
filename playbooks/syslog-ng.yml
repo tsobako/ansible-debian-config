@@ -1,0 +1,28 @@
+---
+#################################
+# Система мониторинга syslog-ng #
+#################################
+
+- name: Install sysglog-ng
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Install GPG key
+      ansible.builtin.apt_key:
+        url: https://ose-repo.syslog-ng.com/apt/syslog-ng-ose-pub.asc
+        keyring: /etc/apt/trusted.gpg.d/syslog-ng.gpg
+        state: present
+
+    - name: Register syslog-ng repository
+      ansible.builtin.apt_repository:
+        repo: deb https://ose-repo.syslog-ng.com/apt/ stable debian-bookworm
+        state: present
+        filename: syslog-ng # /etc/apt/sources.list.d/syslog-ng.list
+        update_cache: true  # apt update
+
+    - name: Install syslog-ng package
+      ansible.builtin.apt:
+        name: syslog-ng
+        state: present

@@ -1,5 +1,5 @@
 ---
-- name: Install Node.JS 18.x
+- name: Install Node.JS 20.x
   hosts: all
   become: true
   gather_facts: true
@@ -13,10 +13,10 @@
 
     - name: Register Node.JS APT repository
       ansible.builtin.apt_repository:
-        repo: deb https://deb.nodesource.com/node_18.x nodistro main
+        repo: deb https://deb.nodesource.com/node_20.x nodistro main
         state: present
         filename: nodejs # /etc/apt/sources.list.d/nodesource.list
-        update_cache: true  # apt update
+        update_cache: true # apt update
 
     - name: Install NodeJS package
       ansible.builtin.apt:

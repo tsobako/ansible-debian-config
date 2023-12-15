@@ -1,8 +1,8 @@
 # Ansible Debian Config
 
-Настройка Debian с помощью [Ansible][1].
+Настройка Debian с помощью [Ansible][ansible].
 
-Размещённые в этом репозитории плейбуки предназначены для быстрой установки и настройки нужного ПО в [Debian Linux][2]. В настоящее время речь идёт о релизе BullsEye. В дальнейшем планируется создание отдельных веток, соответствующих релизам дистрибутива.
+Размещённые в этом репозитории плейбуки предназначены для быстрой установки и настройки нужного ПО в [Debian Linux][debian]. В настоящее время речь идёт о релизе BullsEye. В дальнейшем планируется создание отдельных веток, соответствующих релизам дистрибутива.
 
 В файле инвентаря сейчас присутствует запись только для локального компьютера.
 
@@ -42,11 +42,11 @@
 
 ### Mattermost
 
-Установка клиента рабочего стола для мессенджера [Mattermost][4].
+Установка клиента рабочего стола для мессенджера [Mattermost][mattermost].
 
 ### NodeJS
 
-Установка [NodeJS][3] LTS. В настоящее время это 18.x.
+Установка [NodeJS][nodejs] LTS. В настоящее время это 20.x.
 
 ### QEMU-KVM
 
@@ -54,11 +54,15 @@
 
 ### Ruby
 
-Установка [Ruby][5] и пакетов, необходимых для нативной сборки расширений.
+Установка [Ruby][ruby] и пакетов, необходимых для нативной сборки расширений.
+
+### Syslog-ng
+
+Установка системы логирования [syslog-ng][syslog-ng] из официального репозитория.
 
 ### Terraform
 
-Установка [HashiCorp Terraform][6]. Может не работать из-за введенных против России санкционных ограничений.
+Установка [HashiCorp Terraform][terraform]. Может не работать из-за введенных против России санкционных ограничений.
 
 ### Thunderbird
 
@@ -66,17 +70,18 @@
 
 ### VirtualBox
 
-Установка [Oracle VirtualBox][7]. **В настоящее время дистрибутива для Debian Bookworm не существует**.
+Установка [Oracle VirtualBox][virtualbox]. **В настоящее время дистрибутива для Debian Bookworm не существует**.
 
 ### Yandex Browser
 
-Установка стабильной версии [Yandex Browser][8].
+Установка стабильной версии [Yandex Browser][yandex-browser].
 
-[1]: https://ansible.com/
-[2]: https://debian.org/
-[3]: https://nodejs.org/
-[4]: https://mattermost.com/
-[5]: https://ruby-lang.org/
-[6]: https://developer.hashicorp.com/terraform
-[7]: https://virtualbox.org/
-[8]: https://browser.yandex.ru/
+[ansible]: https://ansible.com/
+[debian]: https://debian.org/
+[mattermost]: https://mattermost.com/
+[nodejs]: https://nodejs.org/
+[ruby]: https://ruby-lang.org/
+[syslog-ng]: https://www.syslog-ng.com/
+[terraform]: https://developer.hashicorp.com/terraform
+[virtualbox]: https://virtualbox.org/
+[yandex-browser]: https://browser.yandex.ru/
