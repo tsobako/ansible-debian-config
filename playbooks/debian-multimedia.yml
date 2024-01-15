@@ -1,0 +1,18 @@
+---
+# https://www.deb-multimedia.org/
+- name: Connect Debian Multimedia repository
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Download and install package with GPG key
+      ansible.builtin.apt:
+        deb: https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
+
+    - name: Register Debian Multimedia repository
+      ansible.builtin.apt_repository:
+        repo: deb https://www.deb-multimedia.org {{ ansible_facts.ansible_distribution_release }} main non-free
+        state: present
+        filename: debian-multimedia # /etc/apt/sources.list.d/debian-miltimedia.list
+        update_cache: true
