@@ -11,10 +11,8 @@
         state: absent
         purge: true
 
-    - name: Install GNU Emacs and Git packages
+    - name: Install GNU Emacs
       ansible.builtin.apt:
         update_cache: true
         pkg:
           - emacs
-          - emacs-goodies-el
-          - git
