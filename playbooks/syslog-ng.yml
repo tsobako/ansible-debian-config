@@ -17,7 +17,7 @@
 
     - name: Register syslog-ng repository
       ansible.builtin.apt_repository:
-        repo: deb https://ose-repo.syslog-ng.com/apt/ stable debian-bookworm
+        repo: deb https://ose-repo.syslog-ng.com/apt/ stable debian-{{ ansible_distribution_release }}
         state: present
         filename: syslog-ng # /etc/apt/sources.list.d/syslog-ng.list
         update_cache: true  # apt update
