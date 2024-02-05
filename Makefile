@@ -3,12 +3,14 @@ CC=ansible-lint
 .PHONY : tests
 
 tests:
-	$(CC) playbook/docker.yml
-	$(CC) playbook/emacs.yml
-	$(CC) playbook/mattermost.yml
-	$(CC) playbook/nodejs.yml
-	$(CC) playbook/qemu-kvm.yml
-	$(CC) playbook/ruby.yml
-	$(CC) playbook/thunderbird.yml
-	$(CC) plyabook/virtualbox.yml
-	$(CC) playbook/yandex-browser.yml
+	$(CC) playbooks/docker.yml
+	$(CC) playbooks/emacs.yml
+	$(CC) playbooks/mattermost.yml
+	$(CC) playbooks/nodejs.yml
+	#	$(CC) playbooks/qemu-kvm.yml
+	$(CC) playbooks/ruby.yml
+	$(CC) playbooks/thunderbird.yml
+	$(CC) playbooks/virtualbox.yml
+	$(CC) playbooks/yandex-browser.yml
+	$(CC) playbooks/elixir.yml
+	$(CC) playbooks/julia.yml

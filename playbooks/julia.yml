@@ -1,0 +1,21 @@
+---
+- name: Install Julia
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Download Julia package from site
+      ansible.builtin.get_url:
+        url: https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.0-linux-x86_64.tar.gz
+        dest: /var/julia.tar.gz
+        mode: "0644"
+        checksum: md5:c16f16304cac9af1501ae71c02cb4d1e
+    - name: Unzip Julia archive to /opt
+      ansible.builtin.unarchive:
+        src: /var/julia.tar.gz
+        dest: /opt
+    - name: Link Julia executable to /usr/local/bin
+      ansible.builtin.file:
+        src: /opt/julia-1.10.0/bin/julia
+        dest: /usr/local/bin/julia
+        state: link

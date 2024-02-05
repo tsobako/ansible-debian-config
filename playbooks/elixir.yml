@@ -1,0 +1,11 @@
+---
+- name: Install Elixir
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install core Elixir packages
+      ansible.builtin.apt:
+        update_cache: true
+        pkg:
+          - elixir
