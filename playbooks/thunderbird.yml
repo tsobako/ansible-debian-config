@@ -9,4 +9,3 @@
         update_cache: true
         pkg:
           - thunderbird
-          - thunderbird-l10n-ru

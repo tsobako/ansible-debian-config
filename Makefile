@@ -14,3 +14,4 @@ tests:
 	$(CC) playbooks/yandex-browser.yml
 	$(CC) playbooks/elixir.yml
 	$(CC) playbooks/julia.yml
+	$(CC) playbooks/obsidian.yml

@@ -1,0 +1,10 @@
+---
+- name: Install Obsidian from official deb
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install Obsidian
+      ansible.builtin.apt:
+        update_cache: true
+        deb: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.3/obsidian_1.5.3_amd64.deb
